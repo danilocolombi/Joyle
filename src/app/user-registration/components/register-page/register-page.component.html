@@ -1,129 +1,101 @@
-<div class="wrapper">
-  <div class="page-header" style="background-color: #525f7f;">
-    <div class="page-header-image" style="background-image: url('assets/img/ill/register_bg.png');"></div>
-    <div class="container">
-      <div class="col-lg-5 col-md-8 mx-auto">
-        <div class="card bg-secondary shadow border-0">
-          <div class="card-body px-lg-5 py-lg-5">
-            <form role="form" (ngSubmit)="register()" [formGroup]="registrationForm">
-              <div class="form-group mb-3" [ngClass]="{ 'focused': focusUsername === true }">
-                <div class="input-group input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="ni ni-badge"> </i>
-                    </span>
-                  </div>
+<div class="fullscreen">
+  <div class="container">
+    <div class="row pt-5 justify-content-center">
+      <div class="col-md-8">
+        <div class="card" style="max-height:650px;">
+          <div class="card-body px-lg-5 py-lg-4">
+            <h5 class="card-title text-center mb-4">Register</h5>
+            <div *ngIf="!registrationCompleted">
+              <form role="form" (ngSubmit)="register()" [formGroup]="registrationForm">
+                <div class="form-floating mb-3">
                   <input
+                    type="text"
                     class="form-control"
                     id="username"
                     name="username"
+                    formControlName="username"
                     placeholder="Username"
-                    (blur)="focusUsername = false"
-                    (focus)="focusUsername = true"
-                    type="text" 
-                    [ngClass]="{'is-invalid': displayMessages.username }"
-                    />
-                </div>
-                <span class="text-danger" *ngIf="displayMessages.username">
-                  <p class="error-message" [innerHTML]="displayMessages.username"></p>
-                </span>
-              </div>
-              <div class="form-group mb-3" [ngClass]="{ 'focused': focusFullName === true }">
-                <div class="input-group input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="ni ni-badge"> </i>
-                    </span>
-                  </div>
+                    [ngClass]="{'is-invalid': displayMessages.username }"> 
+                  <label for="floatingInput">Username</label>
+                  <span class="text-danger" *ngIf="displayMessages.username">
+                    <p class="error-message" [innerHTML]="displayMessages.username"></p>
+                  </span>
+                </div>      
+                <div class="form-floating mb-3">
                   <input
+                    type="text"
                     class="form-control"
                     id="fullName"
                     name="fullName"
-                    placeholder="Full name"
-                    (blur)="focusFullName = false"
-                    (focus)="focusFullName = true"
-                    type="text" 
-                    [ngClass]="{'is-invalid': displayMessages.fullName }"
-                    />
-                </div>
-                <span class="text-danger" *ngIf="displayMessages.fullName">
-                  <p class="error-message" [innerHTML]="displayMessages.fullName"></p>
-                </span>
-              </div>
-              <div class="form-group mb-3" [ngClass]="{ 'focused': focusEmail === true }">
-                <div class="input-group input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="ni ni-email-83"> </i>
-                    </span>
-                  </div>
-                  <input 
+                    formControlName="fullName"
+                    placeholder="Full Name"
+                    [ngClass]="{'is-invalid': displayMessages.fullName }"> 
+                  <label for="floatingInput">Full Name</label>
+                  <span class="text-danger" *ngIf="displayMessages.fullName">
+                    <p class="error-message" [innerHTML]="displayMessages.fullName"></p>
+                  </span>
+                </div>       
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
                     class="form-control"
                     id="email"
                     name="email"
-                    placeholder="Email"
-                    (blur)="focusEmail = false"
-                    (focus)="focusEmail = true"
-                    type="email" 
-                    [ngClass]="{'is-invalid': displayMessages.email }"
-                    />
-                </div>
-                <span class="text-danger" *ngIf="displayMessages.email">
-                  <p class="error-message" [innerHTML]="displayMessages.email"></p>
-                </span>
-              </div>
-              <div class="form-group" [ngClass]="{ 'focused': focusPassword === true }">
-                <div class="input-group input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="ni ni-lock-circle-open"> </i>
-                    </span>
-                  </div>
+                    formControlName="email"
+                    placeholder="email"
+                    [ngClass]="{'is-invalid': displayMessages.email }"> 
+                  <label for="floatingInput">Email</label>
+                  <span class="text-danger" *ngIf="displayMessages.email">
+                    <p class="error-message" [innerHTML]="displayMessages.email"></p>
+                  </span>
+                </div>    
+                <div class="form-floating mb-3">
                   <input
+                    type="password"
+                    class="form-control"
                     id="password"
                     name="password"
-                    class="form-control"
-                    placeholder="Password"
-                    (blur)="focusPassword = false"
-                    (focus)="focusPassword = true"
-                    type="password" 
-                    [ngClass]="{'is-invalid': displayMessages.password }"
-                    />
-                </div>
-                <span class="text-danger" *ngIf="displayMessages.password">
-                  <p class="error-message" [innerHTML]="displayMessages.password"></p>
-                </span>
-              </div>
-              <div class="form-group" [ngClass]="{ 'focused': focusConfirmPassword === true }">
-                <div class="input-group input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="ni ni-lock-circle-open"> </i>
-                    </span>
-                  </div>
+                    formControlName="password"
+                    placeholder="password"
+                    [ngClass]="{'is-invalid': displayMessages.password }"> 
+                  <label for="floatingInput">Password</label>
+                  <span class="text-danger" *ngIf="displayMessages.password">
+                    <p class="error-message" [innerHTML]="displayMessages.password"></p>
+                  </span>
+                </div> 
+                <div class="form-floating mb-3">
                   <input
+                    type="password"
+                    class="form-control"
                     id="confirmPassword"
                     name="confirmPassword"
-                    class="form-control"
-                    placeholder="Password"
-                    (blur)="focusConfirmPassword = false"
-                    (focus)="focusConfirmPassword = true"
-                    type="password" 
-                    [ngClass]="{'is-invalid': displayMessages.confirmPassword }"
-                    />
+                    formControlName="confirmPassword"
+                    placeholder="Confirm Password"
+      
+                    [ngClass]="{'is-invalid': displayMessages.confirmPassword }"> 
+                  <label for="floatingInput">Confirm Password</label>
+                  <span class="text-danger" *ngIf="displayMessages.confirmPassword">
+                    <p class="error-message" [innerHTML]="displayMessages.confirmPassword"></p>
+                  </span>
+                </div>   
+                <div class="text-center">
+                  <button class="btn btn-primary my-4" type="submit"
+                    [disabled]="!registrationForm.valid">
+                    Register
+                  </button>
                 </div>
-                <span class="text-danger" *ngIf="displayMessages.confirmPassword">
-                  <p class="error-message" [innerHTML]="displayMessages.confirmPassword"></p>
-                </span>
-              </div>
-              <div class="text-center">
-                <button class="btn btn-primary my-4" type="button">
-                  Register
-                </button>
-              </div>
-            </form>
+              </form>
+            </div>
+            <div class="my-5 text-center" *ngIf="registrationCompleted">
+              <h4>Success!</h4>
+              <p class="fs-5">Please click on the confirmation link we sent to your email to complete your registration</p>
+              <a class="my-2" style="
+              color: green;
+              font-size: 50px;"><i class="fa-solid fa-circle-check"></i></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

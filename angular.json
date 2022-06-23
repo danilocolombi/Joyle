@@ -32,10 +32,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/assets/css/nucleo-svg.css",
-              "src/assets/css/nucleo-icons.css",
-              "src/assets/css/font-awesome.css",
-              "src/assets/scss/argon-design-system.scss"
+              "node_modules/ngx-toastr/toastr.css"              
             ],
             "scripts": [
             ]
