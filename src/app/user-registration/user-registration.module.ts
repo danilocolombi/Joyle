@@ -4,6 +4,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { CustomFormsModule } from "ng2-validation";
+import { NgxSpinnerModule } from "ngx-spinner";
 import { ToastrModule } from "ngx-toastr";
 import { ConfirmPageComponent } from "./components/confirm-page/confirm-page.component";
 import { RegisterPageComponent } from "./components/register-page/register-page.component";
@@ -25,7 +26,8 @@ import { UserRegistrationRoutingModule } from "./user-registration.route";
         CustomFormsModule,
         UserRegistrationRoutingModule,
         ToastrModule,
-        HttpClientModule
+        HttpClientModule,
+        NgxSpinnerModule
     ],
     providers:[
         UserRegistrationService

@@ -23,4 +23,12 @@ export class UserRegistrationService extends BaseService {
 
     return response;
   }
+
+  confirmRegistration(id: string): Observable<unknown>{
+    let response = this.http.post(`${this.userRegistrationserviceUrl}/${id}`,
+      this.GetJsonHeader())
+      .pipe(catchError(this.serviceError));
+
+    return response;
+  }
 }

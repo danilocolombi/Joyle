@@ -15,10 +15,10 @@ export abstract class BaseService {
   protected serviceError(response: Response | any) {
     if (response instanceof HttpErrorResponse) {
         if (response.statusText === "Unknown Error") 
-            return throwError("Ocorreu um erro. Tente novamente mais tarde");
+            return throwError("There was an error, please try again later");
     }
     if (response.status === 500) 
-        return throwError("Ocorreu um erro no processamento, tente novamente mais tarde ou contate o nosso suporte.");
+        return throwError("There was an error handling your request");
     else
       return throwError(response.error.errors);
   } 

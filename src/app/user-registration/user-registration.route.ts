@@ -9,7 +9,7 @@ const routes: Routes = [
      path: '', component: UserRegistrationAppComponent,
      children: [
          {path: 'register', component: RegisterPageComponent},
-         {path: 'confirm', component: ConfirmPageComponent}
+         {path: 'confirm/:id', component: ConfirmPageComponent}
      ]
  }   
 ]

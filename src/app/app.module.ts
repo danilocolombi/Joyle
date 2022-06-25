@@ -17,6 +17,7 @@ import { UserRegistrationModule } from './user-registration/user-registration.mo
     AppRoutingModule,
     UserRegistrationModule,
     ToastrModule.forRoot(),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

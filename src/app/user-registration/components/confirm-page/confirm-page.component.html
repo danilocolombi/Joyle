@@ -1,1 +1,28 @@
-<p>confirm-page works!</p>
+<div class="fullscreen">
+    <div class="container">
+        <div class="row py-5 my-5">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="card" style="max-height:650px; width: 450px;">
+                    <div class="card-body px-lg-5 py-lg-4">
+                        <div *ngIf="confirmationStatus == allConfirmationStatus.initial">
+                            <h5 class="card-title text-center mb-4">Hold on</h5>
+                            <p class="text-center fs-5">We are confirming your registration...</p>
+                        </div>
+                        <div class="text-center" *ngIf="confirmationStatus == allConfirmationStatus.confirmed">
+                            <h5 class="card-title text-center mb-4">Success</h5>
+                            <p class="text-center fs-5">{{message}}</p>
+                            <a href="#" class="btn btn-primary">Login</a>
+                        </div>
+                        <div class="text-center" *ngIf="confirmationStatus == allConfirmationStatus.error">
+                            <h5 class="card-title text-center mb-4">Error</h5>
+                            <p class="text-center fs-5">{{message}}</p>
+                          <a style="color: red; font-size: 50px;"> <i class="fa-solid fa-bug"></i></a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
