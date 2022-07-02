@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'user-registration-app-root',
+  selector: 'account-app-root',
   template: '<router-outlet></router-outlet>'
 })
-export class UserRegistrationAppComponent{}
+export class AccountAppComponent{}

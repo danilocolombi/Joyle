@@ -10,14 +10,14 @@ import { catchError, tap } from "rxjs/operators";
 })
 export class UserRegistrationService extends BaseService {
 
+  private userRegistrationServiceUrl: string = this.urlServiceV1 + "accounts/user-registrations";
+
   constructor(private http: HttpClient) {
     super();
    }
-
-   private userRegistrationserviceUrl: string = this.urlServiceV1 + "accounts/user-registrations";
-
+   
   register(request: RegisterNewUserRequest): Observable<unknown>{
-    let response = this.http.post(this.userRegistrationserviceUrl, request,
+    let response = this.http.post(this.userRegistrationServiceUrl, request,
       this.GetJsonHeader())
       .pipe(catchError(this.serviceError));
 
@@ -25,7 +25,7 @@ export class UserRegistrationService extends BaseService {
   }
 
   confirmRegistration(id: string): Observable<unknown>{
-    let response = this.http.post(`${this.userRegistrationserviceUrl}/${id}`,
+    let response = this.http.post(`${this.userRegistrationServiceUrl}/${id}`,
       this.GetJsonHeader())
       .pipe(catchError(this.serviceError));
 

@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations"; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserRegistrationModule } from './user-registration/user-registration.module';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { UserRegistrationModule } from './user-registration/user-registration.mo
     BrowserAnimationsModule,
     AppRoutingModule,
     UserRegistrationModule,
+    AccountModule,
     ToastrModule.forRoot(),
     
   ],
