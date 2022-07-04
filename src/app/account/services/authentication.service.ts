@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { BaseService } from 'src/app/shared/services/base.service';
 import { AuthenticationRequest } from '../models/authentication-request';
+import { CustomResponse } from '../models/custom-response';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class AuthenticationService extends BaseService {
     super();
   }
 
-  authenticate(request: AuthenticationRequest): Observable<unknown> {
-    let response = this.http.post(this.authenticationServiceUrl, request, this.GetJsonHeader())
+  authenticate(request: AuthenticationRequest): Observable<CustomResponse> {
+    let response = this.http.post<CustomResponse>(this.authenticationServiceUrl, request, this.GetJsonHeader())
     .pipe(catchError(this.serviceError));
 
     return response;

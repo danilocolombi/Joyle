@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { fromEvent, merge, Observable } from "rxjs";
 import { DisplayMessage, GenericValidator, ValidationMessages } from "src/app/shared/utils/generic-form-validator";
 import { AuthenticationRequest } from '../../models/authentication-request';
+import { CustomResponse } from "../../models/custom-response";
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
@@ -66,13 +67,14 @@ export class LoginPageComponent implements OnInit, AfterViewInit {
 
       this.authenticationService.authenticate(this.authenticationRequest)
         .subscribe(
-          () => this.processSuccess(),
+          response => this.processSuccess(response),
           error => this.processError(error)
         );
     }
   }
 
-  processSuccess(){
+  processSuccess(response: CustomResponse){
+    this.authenticationService.LocalStorage.saveUserData(response.data);
     this.router.navigate(['/account']);
   }
 

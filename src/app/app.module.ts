@@ -7,10 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserRegistrationModule } from './user-registration/user-registration.module';
 import { AccountModule } from './account/account.module';
+import { NavigationModule } from './navigation/navigation.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,6 +20,7 @@ import { AccountModule } from './account/account.module';
     UserRegistrationModule,
     AccountModule,
     ToastrModule.forRoot(),
+    NavigationModule
     
   ],
   providers: [],

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { throwError } from 'rxjs';
+import { LocalStorageUtils } from '../utils/localstorage';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ import { throwError } from 'rxjs';
 export abstract class BaseService {
 
   protected urlServiceV1: string = environment.apiUrlv1;
-  
+  public LocalStorage = new LocalStorageUtils();
+
   constructor() { }
 
   protected serviceError(response: Response | any) {

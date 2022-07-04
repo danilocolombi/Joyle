@@ -6,6 +6,7 @@ import { RouterModule } from "@angular/router";
 import { CustomFormsModule } from "ng2-validation";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ToastrModule } from "ngx-toastr";
+import { NavigationModule } from "../navigation/navigation.module";
 import { AccountAppComponent } from "./account.app.component";
 import { AccountRoutingModule } from "./account.route";
 import { LoginPageComponent } from "./components/login-page/login-page.component";
@@ -27,7 +28,8 @@ import { AuthenticationService } from "./services/authentication.service";
         ToastrModule,
         HttpClientModule,
         NgxSpinnerModule,
-        AccountRoutingModule
+        AccountRoutingModule,
+        NavigationModule
     ],
     providers:[
         AuthenticationService
