@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { UserRegistrationModule } from './user-registration/user-registration.module';
 import { AccountModule } from './account/account.module';
 import { NavigationModule } from './navigation/navigation.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavigationModule } from './navigation/navigation.module';
     UserRegistrationModule,
     AccountModule,
     ToastrModule.forRoot(),
-    NavigationModule
+    NavigationModule,
+    NgbModule
     
   ],
   providers: [],

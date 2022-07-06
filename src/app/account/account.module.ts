@@ -3,6 +3,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { CustomFormsModule } from "ng2-validation";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ToastrModule } from "ngx-toastr";
@@ -29,7 +30,7 @@ import { AuthenticationService } from "./services/authentication.service";
         HttpClientModule,
         NgxSpinnerModule,
         AccountRoutingModule,
-        NavigationModule
+        NavigationModule,
     ],
     providers:[
         AuthenticationService
