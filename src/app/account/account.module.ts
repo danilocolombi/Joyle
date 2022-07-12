@@ -3,7 +3,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { CustomFormsModule } from "ng2-validation";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ToastrModule } from "ngx-toastr";
@@ -13,12 +12,18 @@ import { AccountRoutingModule } from "./account.route";
 import { LoginPageComponent } from "./components/login-page/login-page.component";
 import { MyAccountComponent } from "./components/my-account/my-account.component";
 import { AuthenticationService } from "./services/authentication.service";
+import { UsernameModalComponent } from './components/username-modal/username-modal.component';
+import { MdbModalModule } from "mdb-angular-ui-kit/modal";
+import { UserService } from "./services/user.service";
+import { FullNameModalComponent } from './components/full-name-modal/full-name-modal.component';
 
 @NgModule({
     declarations:[
         AccountAppComponent,
         LoginPageComponent,
-        MyAccountComponent
+        MyAccountComponent,
+        UsernameModalComponent,
+        FullNameModalComponent
     ],
     imports:[
         CommonModule,
@@ -31,9 +36,12 @@ import { AuthenticationService } from "./services/authentication.service";
         NgxSpinnerModule,
         AccountRoutingModule,
         NavigationModule,
+        MdbModalModule
+
     ],
     providers:[
-        AuthenticationService
+        AuthenticationService,
+        UserService
     ]
 })
 export class AccountModule{}

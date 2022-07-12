@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <h6>Rename</h6>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
+  </div>
+  <form (ngSubmit)="renameUser()" [formGroup]="renameUserForm">
+    <div class="modal-body">
+      <div class="modal-body">
+        <div class="mb-3 px-4">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName" name="fullName" formControlName="fullName"
+            [ngClass]="{'is-invalid': displayMessages.fullName }">
+          <span class="text-danger" *ngIf="displayMessages.fullName">
+            <p class="error-message" [innerHTML]="displayMessages.fullName"></p>
+          </span>
+        </div>
+      </div>
+  </div>
+  <div class="modal-footer border-top-0">
+    <button type="submit" class="btn btn-primary" [disabled]="!renameUserForm.valid">Confirm</button>
+  </div>
+  </form>

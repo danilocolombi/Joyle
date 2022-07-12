@@ -11,6 +11,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^12.2.16",
+    "@angular/cdk": "^12.1.0",
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/core": "~12.2.0",
@@ -19,9 +20,9 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
-    "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "angular-reactive-validation": "^6.0.0",
     "bootstrap": "^4.5.0",
+    "mdb-angular-ui-kit": "^2.3.0",
     "ng2-validation": "^4.2.0",
     "ngx-spinner": "^13.1.1",
     "ngx-toastr": "^14.3.0",

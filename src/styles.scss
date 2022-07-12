@@ -1,3 +1,5 @@
+// @import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+
 .invalid-feedback {
     width: 100%;
     margin-top: .25rem;
@@ -12,8 +14,5 @@
     bottom: 0;
     right: 0;
     overflow: auto;
-    background: #f8f9fa; /* Just to visualize the extent */
-    
+    background: #f8f9fa;
   }
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';

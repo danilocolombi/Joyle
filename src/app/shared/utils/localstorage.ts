@@ -17,7 +17,7 @@ export class LocalStorageUtils{
         localStorage.setItem('joyle.token', token);
     }
 
-    private saveUser(user: User) {
+    public saveUser(user: User) {
         localStorage.setItem('joyle.user', JSON.stringify(user));
     }
 

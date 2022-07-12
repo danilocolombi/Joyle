@@ -95,7 +95,7 @@ export class RegisterPageComponent implements OnInit, AfterViewInit {
         .subscribe(
           () => this.processSuccess(),
           error => this.processError(error)
-        )
+        );
     }
   }
 

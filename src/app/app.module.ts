@@ -8,11 +8,11 @@ import { AppComponent } from './app.component';
 import { UserRegistrationModule } from './user-registration/user-registration.module';
 import { AccountModule } from './account/account.module';
 import { NavigationModule } from './navigation/navigation.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -21,9 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UserRegistrationModule,
     AccountModule,
     ToastrModule.forRoot(),
-    NavigationModule,
-    NgbModule
-    
+    NavigationModule   
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,24 +16,28 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" style="  background-color: #f8f9fa;">
+                <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" style="  background-color: #f8f9fa;">
                     <i class="fa-solid fa-user text-primary" style="font-size: 25px;"></i>
                     <div class="d-flex gap-2 w-100 justify-content-between">
                         <div>
                         <h6 class="mb-0">Username:</h6>
                         <p class="mb-0 opacity-75"> {{user.username}}</p>
                         </div>
+                       <a style="cursor:pointer;" (click)="openUsernameModal()">
                         <i class="fa-solid fa-pen"></i>
+                       </a> 
                     </div>
                 </a>
-                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" style="  background-color: #f8f9fa;">
+                <a class="list-group-item list-group-item-action d-flex gap-3 py-3" style="  background-color: #f8f9fa;">
                     <i class="fa-solid fa-id-badge text-primary" style="font-size: 25px;"></i>
                     <div class="d-flex gap-2 w-100 justify-content-between">
                         <div>
                         <h6 class="mb-0">Full Name:</h6>
                         <p class="mb-0 opacity-75"> {{user.fullName}}</p>
                         </div>
-                        <i class="fa-solid fa-pen"></i>
+                        <a style="cursor:pointer;" (click)="openFullNameModal()">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
                     </div>
                 </a>                
                 <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" style="  background-color: #f8f9fa;">
