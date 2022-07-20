@@ -53,7 +53,7 @@ export class FullNameModalComponent implements OnInit, AfterViewInit {
     .map((formcontrol: ElementRef) => fromEvent(formcontrol.nativeElement, 'blur'));
 
     merge(...controlBlurs).subscribe(() => {
-      this.displayMessages = this.genericValidator.processarMensagens(this.renameUserForm);
+      this.displayMessages = this.genericValidator.processMessages(this.renameUserForm);
     });
   }
 

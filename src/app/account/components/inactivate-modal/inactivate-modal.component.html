@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h6>Inactivate</h6>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
+  </div>
+    <div class="modal-body mx-1">
+        <p>Are you sure you want to inactivate your account?</p>
+  </div>
+  <div class="modal-footer border-top-0">
+    <button type="submit" class="btn btn-danger">Cancel</button>
+    <button type="submit" class="btn btn-primary" (click)="inactivateUser()">Confirm</button>
+  </div>

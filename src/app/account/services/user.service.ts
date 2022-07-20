@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { BaseService } from 'src/app/shared/services/base.service';
+import { ChangeUserPasswordRequest } from '../models/change-user-password-request';
 import { ChangeUsernameRequest } from '../models/change-username-request';
 import { RenameUserRequest } from '../models/rename-user-request';
 @Injectable({
@@ -31,6 +32,24 @@ export class UserService extends BaseService {
       `${this.userServiceUrl}/name`,
       request,
       this.GetAuthHeaderJson())
+      .pipe(catchError(this.serviceError))     
+      
+    return response;
+  }
+
+  changeUserPassword(request: ChangeUserPasswordRequest): Observable<unknown>{
+    let response = this.http.patch(
+      `${this.userServiceUrl}/password`,
+      request,
+      this.GetAuthHeaderJson())
+      .pipe(catchError(this.serviceError))     
+      
+    return response;
+  }
+
+  inactivate(): Observable<unknown>{
+    let response = this.http.post(
+      `${this.userServiceUrl}/inactivation`, null, this.GetAuthHeaderJson())
       .pipe(catchError(this.serviceError))     
       
     return response;

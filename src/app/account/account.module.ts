@@ -16,6 +16,8 @@ import { UsernameModalComponent } from './components/username-modal/username-mod
 import { MdbModalModule } from "mdb-angular-ui-kit/modal";
 import { UserService } from "./services/user.service";
 import { FullNameModalComponent } from './components/full-name-modal/full-name-modal.component';
+import { PasswordModalComponent } from './components/password-modal/password-modal.component';
+import { InactivateModalComponent } from './components/inactivate-modal/inactivate-modal.component';
 
 @NgModule({
     declarations:[
@@ -23,7 +25,9 @@ import { FullNameModalComponent } from './components/full-name-modal/full-name-m
         LoginPageComponent,
         MyAccountComponent,
         UsernameModalComponent,
-        FullNameModalComponent
+        FullNameModalComponent,
+        PasswordModalComponent,
+        InactivateModalComponent
     ],
     imports:[
         CommonModule,

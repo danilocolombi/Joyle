@@ -81,7 +81,7 @@ export class RegisterPageComponent implements OnInit, AfterViewInit {
     .map((formcontrol: ElementRef) => fromEvent(formcontrol.nativeElement, 'blur'));
 
     merge(...controlBlurs).subscribe(() => {
-      this.displayMessages = this.genericValidator.processarMensagens(this.registrationForm);
+      this.displayMessages = this.genericValidator.processMessages(this.registrationForm);
     });
   }
 
